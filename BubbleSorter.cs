@@ -39,14 +39,14 @@ public class BubbleSorter
         return sum;
     }
 
-    void SwapValuesWithinArray(int[] array, int index1, int index2)
+    void SwapValuesWithinArray(ref int index1,ref int index2)
     {
         int c = array[index1];
         array[index1] = array[index2];
         array[index2] = c;
     }
 
-    void SwapArray(int[][] array, int a, int b)
+    void Swap(ref int[] a,ref int[] b)
     {
         int[] c = array[a];
         array[a] = array[b];
@@ -84,8 +84,8 @@ public class BubbleSorter
             {
                 if (asc ? subArray[j] > subArray[j + 1] : subArray[j] < subArray[j + 1])
                 {
-                    SwapValuesWithinArray(subArray, j, j + 1);
-                    SwapArray(ar, j, j + 1);
+                    Swap(ref subArray[j],ref subArray[j + 1]);
+                    Swap(ref ar[j],ref ar[j + 1]);
                 }
             }
         }
